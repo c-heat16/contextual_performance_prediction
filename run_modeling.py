@@ -24,7 +24,6 @@ if __name__ == '__main__':
                         type=str, nargs='+',
                         help='Type of data to model. batter, pitcher, team_batting or team_fielding')
 
-    parser.add_argument('--only_mask_eoi_present', default=False, type=str2bool)
     parser.add_argument('--do_group_gathers', default=False, type=str2bool)
     parser.add_argument('--predict_pitches', default=False, type=str2bool)
     parser.add_argument('--predict_ball_data', default=False, type=str2bool)
@@ -33,18 +32,18 @@ if __name__ == '__main__':
     # parser.add_argument('--record_norm_values_fp',
     # default='/home/czh/nvme1/SportsAnalytics/config/max_vals_08162022.json')
     parser.add_argument('--pitch_event_map_fp',
-                        default='/home/czh/nvme1/SportsAnalytics/config/pitch_event_id_mapping.json')
+                        default='../config/pitch_event_id_mapping.json')
     parser.add_argument('--reduced_pitch_event_map_fp',
-                        default='/home/czh/nvme1/SportsAnalytics/config/reduced_pitch_event_id_mapping.json')
+                        default='../config/reduced_pitch_event_id_mapping.json')
     parser.add_argument('--intermediate_pitch_event_map_fp',
-                        default='/home/czh/nvme1/SportsAnalytics/config/pitch_event_intermediate_id_mapping.json')
+                        default='../config/pitch_event_intermediate_id_mapping.json')
     parser.add_argument('--explicit_test_set_dir',
                         default='/home/czh/sata1/SportsAnalytics/whole_game_records/fl_test_sets')
 
     parser.add_argument('--pretrained_embeddings', default=None)
     parser.add_argument('--starting_pitcher_only', default=False, type=str2bool)
     parser.add_argument('--pitcher_avg_inning_entry_fp',
-                        default='/home/czh/nvme1/SportsAnalytics/data/pitcher_avg_inning_entry.json')
+                        default='../data/pitcher_avg_inning_entry.json')
     parser.add_argument('--prepend_entity_type_id', default=False, type=str2bool)
     parser.add_argument('--v2_player_attn', default=False, type=str2bool)
     parser.add_argument('--v2_attn_max_n_batter', default=24)
@@ -52,8 +51,8 @@ if __name__ == '__main__':
 
     parser.add_argument('--batter_ab_threshold_custom_id', default=40)
     parser.add_argument('--pitcher_ab_threshold_custom_id', default=200)
-    parser.add_argument('--batter_pre2021_n_ab_d_fp', default='/home/czh/nvme1/SportsAnalytics/data/batter_n_ab_pre_2021.json')
-    parser.add_argument('--pitcher_pre2021_n_ab_d_fp', default='/home/czh/nvme1/SportsAnalytics/data/pitcher_n_ab_pre_2021.json')
+    parser.add_argument('--batter_pre2021_n_ab_d_fp', default='../data/batter_n_ab_pre_2021.json')
+    parser.add_argument('--pitcher_pre2021_n_ab_d_fp', default='../data/pitcher_n_ab_pre_2021.json')
 
     parser.add_argument('--norm_first', default=False, type=str2bool)
     parser.add_argument('--ordinal_pos_embeddings', default=False, type=str2bool)
@@ -104,7 +103,7 @@ if __name__ == '__main__':
     parser.add_argument('--boab_can_be_masked', default=False, type=str2bool)
     parser.add_argument('--use_player_id', default=False, type=str2bool)
     parser.add_argument('--player_id_mask_pct', default=0.15, type=float)
-    parser.add_argument('--player_id_map_fp', default='/home/czh/nvme1/SportsAnalytics/config/all_player_id_mapping.json')
+    parser.add_argument('--player_id_map_fp', default='../config/all_player_id_mapping.json')
     parser.add_argument('--xent_label_smoothing', default=0.0, type=float)
 
     parser.add_argument('--n_games_context', default=15, type=int,
@@ -127,8 +126,8 @@ if __name__ == '__main__':
     parser.add_argument('--torch_amp', default=True, type=str2bool)
     parser.add_argument('--tie_weights', default=True, type=str2bool)
 
-    parser.add_argument('--out', default='/home/czh/nvme1/SportsAnalytics/out/fl_modeling', help='Directory to put output')
-    parser.add_argument('--config_dir', default='/home/czh/nvme1/SportsAnalytics/config', help='Directory to find config shit')
+    parser.add_argument('--out', default='..//out/fl_modeling', help='Directory to put output')
+    parser.add_argument('--config_dir', default='../config', help='Directory to find config shit')
 
     parser.add_argument('--batter_data_scopes_to_use',
                         default=['career', 'season', 'last15'],     # , 'this_game'
@@ -181,8 +180,6 @@ if __name__ == '__main__':
     parser.add_argument('--n_stadium_ids', default=35, type=int)
     parser.add_argument('--stadium_embd_dim', default=32, type=int)
     parser.add_argument('--handedness_embd_dim', default=5, type=int)
-
-    parser.add_argument('--team_stadiums_fp', default='/home/czh/nvme1/SportsAnalytics/config/team_stadiums.json')
 
     parser.add_argument('--gamestate_vocab_bos_inning_no', default=False, type=str2bool)
     parser.add_argument('--gamestate_vocab_bos_score_diff', default=False, type=str2bool)

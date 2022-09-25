@@ -3,6 +3,8 @@
 export CUDA_VISIBLE_DEVICES=0,1
 cd ../
 
+export AB_DATA="path/to/ab_data_v17_ssac"
+
 echo "************************************"
 echo "* Running Forward Looking Modeling *"
 echo "************************************"
@@ -10,7 +12,7 @@ echo "************************************"
 echo "*****************************************"
 echo "* Training team_batting & pitcher model *"
 echo "*****************************************"
-python3 run_modeling.py --type "team_batting" "pitcher" \
+python3 run_modeling.py --type "team_batting" "pitcher" --ab_data $AB_DATA\
              --n_games_context 10 --context_max_len 1124 \
              --model_type "vanilla" --attn_mask_type "bidirectional" \
              --completion_max_len 116 \
