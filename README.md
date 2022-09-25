@@ -16,7 +16,7 @@ while the books' predictions reflect a batter recording a hit during the **entir
 ## Preliminaries
 Before models can be trained, the data must be downloaded. 
 
-1. Download at-bat sequence files [here]()
+1. Download at-bat sequence files (`ab_seqs_v17_ssac`) [here](https://pennstateoffice365-my.sharepoint.com/:f:/g/personal/czh5372_psu_edu/EgLnYF4vS_dOjrfgD6dEG_EBTK3cTxcsBdL8GkrvE5G6_w?e=AHIi2X)
    1. Extract the data, and remember the location of the `ab_seqs_v17_ssac` as it will be needed later.
 
 ## Pre-training
