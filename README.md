@@ -8,8 +8,8 @@ Our models are able to make pitcher single-game strikeout and batter has-hit pre
 competitive with three major sportsbooks in the US. A comparison of the predictions is presented below.
 It is important to note the following:
 1. Our model uses **only 10 games** worth of play-by-play data to make predictions
-2. Our batter has-hit predictions reflect the batter recording a hit off of the *starting pitcher*,
-while the books' predictions reflect a batter recording a hit during the entire game, arguably an easier task
+2. Our batter has-hit predictions reflect the batter recording a hit off of the **starting pitcher only**,
+while the books' predictions reflect a batter recording a hit during the **entire game**, arguably an easier task
 
 ![Performance Comparison](misc/performance_comp.png)
 
